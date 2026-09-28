@@ -1,0 +1,76 @@
+---
+layout: default
+---
+{%- assign it = page -%}
+{%- assign cr = it.creator | split: '; ' -%}
+{%- capture authors -%}{% if cr.size > 1 %}{% for c in cr %}{% if forloop.last %}{% unless c == 'et al.' %}& {% endunless %}{{ c }}{% else %}{{ c }}, {% endif %}{% endfor %}{% else %}{{ cr.first }}{% endif %}{%- endcapture -%}
+{%- capture eds -%}{% if it.contributor == 'Editors' %} (Eds.){% elsif it.contributor == 'Editor' %} (Ed.){% endif %}{%- endcapture -%}
+{%- capture citation -%}{% if it.shelf == 'thesis' %}{{ authors }} ({{ it._date }}). {{ it.label }} [{{ it.type }}, {{ it.publisher }}]. {{ it.source }}{% else %}{{ authors }}{{ eds }} ({{ it._date }}). {{ it.label }}. {{ it.publisher }}. {{ it.source }}{% endif %}{%- endcapture -%}
+{%- assign items = site.catalogue | sort: 'order' -%}
+<div class="shelf-{{ it.shelf }}">
+  <div class="item-head"><div class="wrap">
+    <p class="crumbs"><a href="{{ '/browse/' | relative_url }}">Browse</a> › <a href="{{ '/browse/' | relative_url }}?shelf={{ it.shelf }}">{{ it.shelf_label }}</a></p>
+    <span class="badge" style="background:#fff">{{ it.shelf_label }}</span>{% if it.sa == 'yes' %}<span class="badge sa">South Africa</span>{% endif %}
+    <h1>{{ it.label }}</h1>
+    <p class="by">{{ cr | join: '; ' }} · {{ it._date }} · {{ it.type }}</p>
+  </div></div>
+
+  <div class="wrap item-body">
+    <div>
+      <h2>About this item</h2>
+      <p style="margin-top:0">{{ it.description }}</p>
+
+      <h2 style="margin-top:26px">Dublin Core metadata</h2>
+      <table class="dc">
+        <tbody>
+          <tr><th scope="row">Title</th><td>{{ it.label }}</td></tr>
+          <tr><th scope="row">Creator</th><td>{{ cr | join: '; ' }}</td></tr>
+          {% if it.contributor and it.contributor != '' %}<tr><th scope="row">Contributor</th><td>{{ it.contributor }}</td></tr>{% endif %}
+          <tr><th scope="row">Subject</th><td>{{ it.subject }}</td></tr>
+          <tr><th scope="row">Description</th><td>{{ it.description }}</td></tr>
+          <tr><th scope="row">Publisher</th><td>{{ it.publisher }}</td></tr>
+          <tr><th scope="row">Date</th><td>{{ it._date }}</td></tr>
+          <tr><th scope="row">Type</th><td>{{ it.type }}</td></tr>
+          <tr><th scope="row">Format</th><td>{{ it.format }}</td></tr>
+          <tr><th scope="row">Identifier</th><td>{{ it.identifier }}</td></tr>
+          <tr><th scope="row">Source</th><td><a href="{{ it.source }}" target="_blank" rel="noopener">{{ it.source }}</a></td></tr>
+          <tr><th scope="row">Language</th><td>{{ it.language }} (English)</td></tr>
+          <tr><th scope="row">Coverage</th><td>{{ it.coverage }}</td></tr>
+          <tr><th scope="row">Rights</th><td>{{ it.rights }}</td></tr>
+          <tr><th scope="row">Subject area</th><td>{{ it.area }}</td></tr>
+          <tr><th scope="row">Record ID</th><td>{{ it.pid | upcase }}</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <aside>
+      <div class="side-box">
+        <h2>Get this item</h2>
+        <div class="actions">
+          <a class="btn solid" href="{{ it.source }}" target="_blank" rel="noopener">Read online {% include icons.html name='ext' %}</a>
+          {% include download_button.html item=it %}
+          <button class="btn plain" type="button" id="copyCite">Copy citation</button>
+        </div>
+        <p class="note">{% if it.download == '' %}This book is published as a website only, so there is no file to download.{% elsif it.stored_here == 'yes' %}A copy of this file is stored on this site and downloads straight away.{% else %}The download opens the file from the publisher. If it opens in your browser, tap the download or share icon to save it.{% endif %}</p>
+        <div class="cite"><b>Cite (APA 7)</b><br><span id="citeText">{{ citation }}</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <nav class="pager" aria-label="More items">
+      {%- for x in items -%}{%- if x.pid == it.pid -%}{%- assign i = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+      {%- assign pi = i | minus: 1 -%}{%- assign ni = i | plus: 1 -%}
+      {%- if i > 0 -%}{%- assign prev = items[pi] -%}<a class="btn plain" href="{{ prev.url | relative_url }}">‹ Previous item</a>{%- else -%}<span></span>{%- endif -%}
+      {%- if ni < items.size -%}{%- assign next = items[ni] -%}<a class="btn plain" href="{{ next.url | relative_url }}">Next item ›</a>{%- endif -%}
+    </nav>
+  </div>
+</div>
+<script>
+document.getElementById('copyCite').addEventListener('click', function(){
+  var text = document.getElementById('citeText').textContent;
+  function fallback(){ var ta=document.createElement('textarea'); ta.value=text; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, 99999);
+    try{ document.execCommand('copy'); showToast('Citation copied'); }catch(e){ showToast('Copy failed. Select the citation and copy it.'); } ta.remove(); }
+  if(navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(text).then(function(){ showToast('Citation copied'); }, fallback); } else { fallback(); }
+});
+</script>

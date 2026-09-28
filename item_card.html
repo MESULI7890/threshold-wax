@@ -1,0 +1,13 @@
+{%- assign it = include.item -%}
+{%- assign cr = it.creator | split: '; ' -%}
+<article class="card shelf-{{ it.shelf }}" data-shelf="{{ it.shelf }}" data-area="{{ it.area }}" data-sa="{{ it.sa }}">
+  <span class="badge">{{ it.shelf_label }}</span>{% if it.sa == 'yes' %}<span class="badge sa">South Africa</span>{% endif %}
+  <h3><a href="{{ it.url | relative_url }}">{{ it.label }}</a></h3>
+  <div class="meta-line">{{ cr | join: '; ' }} · {{ it._date }} · {{ it.type }} · {{ it.rights }}</div>
+  <p class="desc">{{ it.description }}</p>
+  <div class="actions">
+    <a class="btn solid" href="{{ it.source }}" target="_blank" rel="noopener">Read online {% include icons.html name='ext' %}<span class="sr"> {{ it.label }} (opens in new tab)</span></a>
+    {% include download_button.html item=it %}
+    <a class="btn plain" href="{{ it.url | relative_url }}">View metadata<span class="sr"> for {{ it.label }}</span></a>
+  </div>
+</article>

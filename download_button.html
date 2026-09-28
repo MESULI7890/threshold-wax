@@ -1,0 +1,12 @@
+{%- assign it = include.item -%}
+{%- if it.download and it.download != '' -%}
+  {%- capture size -%}{% if it.download_size != '' and it.download_size contains 'MB' %} ({{ it.download_size }}){% endif %}{%- endcapture -%}
+  {%- if it.stored_here == 'yes' -%}
+    {%- assign fname = it.download | split: '/' | last -%}
+    <a class="btn" href="{{ it.download | relative_url }}" download="{{ fname }}">{% include icons.html name='dl' %} Download {{ it.download_type }}{{ size }}<span class="sr"> of {{ it.label }}</span></a>
+  {%- else -%}
+    <a class="btn" href="{{ it.download }}" target="_blank" rel="noopener">{% include icons.html name='dl' %} Download {{ it.download_type }}{{ size }}<span class="sr"> of {{ it.label }} (opens publisher file)</span></a>
+  {%- endif -%}
+{%- else -%}
+  <span class="btn off" title="Published as a website only">Online only</span>
+{%- endif -%}

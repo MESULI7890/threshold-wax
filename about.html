@@ -1,0 +1,73 @@
+---
+layout: page
+title: About Us
+permalink: /about/
+head_class: ph-about
+lede: "Who we are, what you will find here, and how the library was built."
+---
+{%- assign items = site.catalogue -%}
+<div class="about-grid">
+  <div class="prose">
+    <p class="lead">Open research you can read today, for a brighter mind and a better tomorrow!</p>
+    <p>As a team, we built this academic digital library for DUT students and early-career researchers.</p>
+    <p><b>No paywalls. No logins.</b> Every research report, peer-reviewed journal article, thesis and dissertation, and open textbook in our collection is credible, and free to read and download right now.</p>
+
+    <h2>What you can find here</h2>
+    <ul>
+      {% for s in site.shelves %}{% assign n = items | where: 'shelf', s.key %}
+      <li><a href="{{ '/browse/' | relative_url }}?shelf={{ s.key }}">{{ s.label }}</a> ({{ n.size }})</li>
+      {% endfor %}
+    </ul>
+    {% assign sa = items | where: 'sa', 'yes' %}
+    <p>{{ sa.size }} of the {{ items.size }} items are South African, and every collection has at least two, so local research sits beside international work.</p>
+
+    <h2>Built for research and discovery</h2>
+    <p>Every item is described with Dublin Core metadata, making it easy to search, cite and share your work. Whether you're writing your first assignment or publishing your first paper, start here with us!</p>
+
+    <h2>How we built it: Wax</h2>
+    <p>The library is built with <a href="https://minicomp.github.io/wiki/wax/" target="_blank" rel="noopener">Wax</a>, free and open-source digital library software from the Minicomp project, which runs on the Jekyll static-site generator.</p>
+    <ul>
+      <li><b>Metadata spreadsheet:</b> every item is one row in <code>_data/catalogue.csv</code>, using Dublin Core fields.</li>
+      <li><b>Item pages:</b> <code>rake wax:pages catalogue</code> turns each row into its own record page.</li>
+      <li><b>Search index:</b> <code>rake wax:search main</code> builds the index that powers the search box, using elasticlunr, the search library included with Wax.</li>
+      <li><b>Hosting:</b> the source is stored on GitHub, and Netlify rebuilds the site every time we update it.</li>
+    </ul>
+
+    <h2>Dublin Core metadata</h2>
+    <p>Open any item to see its full record. We use 14 of the 15 Dublin Core elements.</p>
+    <div class="table-scroll">
+      <table class="plain-table">
+        <thead><tr><th>Element</th><th>What we record</th></tr></thead>
+        <tbody>
+          <tr><td>Title</td><td>Full title as published</td></tr>
+          <tr><td>Creator</td><td>Authors, or the organisation for reports</td></tr>
+          <tr><td>Contributor</td><td>Supervisors (theses) or editors (books)</td></tr>
+          <tr><td>Subject</td><td>Keywords used by search</td></tr>
+          <tr><td>Description</td><td>Short plain-language summary</td></tr>
+          <tr><td>Publisher</td><td>Journal, university or organisation</td></tr>
+          <tr><td>Date</td><td>Year of publication</td></tr>
+          <tr><td>Type</td><td>Report, book, open textbook, journal article, master's or doctoral thesis</td></tr>
+          <tr><td>Format</td><td>PDF, EPUB or HTML, with file size</td></tr>
+          <tr><td>Identifier</td><td>DOI or Handle, the permanent link</td></tr>
+          <tr><td>Source</td><td>Where the original is published</td></tr>
+          <tr><td>Language</td><td>ISO 639 code (en)</td></tr>
+          <tr><td>Coverage</td><td>South Africa or International</td></tr>
+          <tr><td>Rights</td><td>Licence, for example CC BY 4.0</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>User interface principles</h2>
+    <div class="principle" style="--c:var(--blue)"><b>Simplicity</b><p>One search box on the home page, four collections, four menu items. White background and one highly legible typeface (Atkinson Hyperlegible, designed for low-vision readers).</p></div>
+    <div class="principle" style="--c:var(--green)"><b>Consistency</b><p>Blue always means Research, green Journal articles, purple Theses and dissertations and teal Open textbooks. Every item has the same three buttons in the same order: Read online, Download, View metadata.</p></div>
+    <div class="principle" style="--c:var(--purple)"><b>Feedback</b><p>Live result counts as you type, matching words highlighted in yellow, the selected filter shown in dark, and a message when a citation is copied.</p></div>
+    <div class="principle" style="--c:var(--red)"><b>Visibility</b><p>The search box is the first thing on the home page, South African work has its own badge, and every download button shows the file type and size before you tap it.</p></div>
+
+    <h2>Phones and accessibility</h2>
+    <p>The layout is built for phones first and tested on Android and iPhone screen sizes: buttons are at least 44 pixels tall for thumbs, text never needs zooming, and nothing scrolls sideways. All text meets WCAG AA contrast, and every control works with a keyboard.</p>
+  </div>
+  <div>
+    <div class="about-photo"><img src="{{ '/assets/about.jpg' | relative_url }}" alt="Shelves of colourful book spines" width="640" height="853" loading="lazy"></div>
+    <div class="note-box">Built for ICTB301, Department of Information Systems, Durban University of Technology, by the project group.</div>
+  </div>
+</div>

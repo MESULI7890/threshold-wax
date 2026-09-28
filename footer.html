@@ -1,0 +1,14 @@
+<footer class="foot">
+  <div class="wrap">
+    <span>{{ site.title }} · DUT Academic Library · ICTB301</span>
+    <span>Built with <a href="https://minicomp.github.io/wiki/wax/" target="_blank" rel="noopener">Wax</a> (open-source) · Dublin Core metadata · Links checked 27 September 2026</span>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+  (function(){
+    var b=document.getElementById('menuBtn'), n=document.getElementById('navLinks');
+    if(b) b.addEventListener('click',function(){ var o=n.classList.toggle('open'); b.setAttribute('aria-expanded',o); b.textContent=o?'Close':'Menu'; });
+  })();
+  window.showToast=function(msg){ var t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(window._tt); window._tt=setTimeout(function(){t.classList.remove('show');},2400); };
+</script>

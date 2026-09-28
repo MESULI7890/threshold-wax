@@ -1,0 +1,86 @@
+# ==============================================================
+# THE THRESHOLD COLLECTION — built with Wax (minicomp/wax)
+# ==============================================================
+# Wax is open-source digital library / exhibition software built on Jekyll.
+# Item pages and the search index are generated from the Dublin Core
+# metadata spreadsheet in _data/catalogue.csv using wax_tasks:
+#   bundle exec rake wax:pages catalogue
+#   bundle exec rake wax:search main
+# ==============================================================
+
+title:        'The Threshold Collection'
+description:  'Academic digital library for DUT students and early-career researchers. Open research you can read today for a brighter mind and better tomorrow.'
+url:          'https://reliable-belekoy-2a2d21.netlify.app'
+baseurl:      ''
+copyright:    'The Threshold Collection project group, ICTB301, Durban University of Technology, 2026'
+
+permalink: pretty
+exclude: ["Gemfile*", "Rakefile", "vendor", "README.md", "netlify.toml", "WAX_LICENSE.txt", "node_modules"]
+
+# --------------------------------------------------------------
+# COLLECTION SETTINGS (Wax)
+# --------------------------------------------------------------
+collections:
+  catalogue:
+    output: true
+    layout: 'item'
+    metadata:
+      source: 'catalogue.csv'   # Dublin Core metadata, one row per item
+
+# --------------------------------------------------------------
+# SEARCH INDEX SETTINGS (Wax / elasticlunr)
+# --------------------------------------------------------------
+search:
+  main:
+    index: '/search/index.json'
+    collections:
+      catalogue:
+        content: false
+        fields:
+          - label
+          - creator
+          - contributor
+          - subject
+          - description
+          - publisher
+          - _date
+          - order
+          - type
+          - area
+          - shelf
+          - shelf_label
+          - sa
+          - coverage
+          - rights
+          - download
+          - download_type
+          - download_size
+          - stored_here
+          - source
+
+# --------------------------------------------------------------
+# SHELVES (the four collections) and MENU
+# --------------------------------------------------------------
+shelves:
+  - key: research
+    label: 'Research'
+    blurb: 'Reports and open-access books from national academies, government and international bodies.'
+  - key: journal
+    label: 'Journal articles'
+    blurb: 'Peer-reviewed articles from open-access journals.'
+  - key: thesis
+    label: 'Theses & dissertations'
+    blurb: "Master's and doctoral work from DUT, UKZN and leading universities."
+  - key: book
+    label: 'Open textbooks & e-books'
+    blurb: 'Free textbooks and e-books from AOSIS, OpenStax, Open Oregon, CALI and the Open Textbook Library.'
+
+menu:
+  - label: 'Home'
+    link: '/'
+  - label: 'Browse'
+    link: '/browse/'
+  - label: 'Search'
+    link: '/search/'
+  - label: 'About Us'
+    link: '/about/'

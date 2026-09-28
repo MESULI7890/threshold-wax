@@ -1,0 +1,64 @@
+---
+layout: page
+title: Search the catalogue
+permalink: /search/
+head_class: ph-search
+lede: "Results update as you type. Every word you enter must match somewhere in the record. Powered by the Wax search index."
+---
+{%- assign items = site.catalogue | sort: 'order' -%}
+{%- assign areas = items | map: 'area' | uniq | sort -%}
+<div class="search-layout">
+  <form class="panel" id="searchForm" role="search" autocomplete="off">
+    <div class="field">
+      <label for="sQ">Keyword</label>
+      <input id="sQ" name="q" type="search" placeholder="e.g. library, health, law" enterkeyhint="search">
+    </div>
+    <details class="more" id="moreFilters">
+    <summary>Filters</summary>
+    <div class="field">
+      <label for="sShelf">Collection</label>
+      <select id="sShelf"><option value="">All collections</option>{% for s in site.shelves %}<option value="{{ s.key }}">{{ s.label }}</option>{% endfor %}</select>
+    </div>
+    <div class="field">
+      <label for="sArea">Subject area</label>
+      <select id="sArea"><option value="">All subject areas</option>{% for a in areas %}<option>{{ a }}</option>{% endfor %}</select>
+    </div>
+    <div class="field">
+      <label for="sYear">Published</label>
+      <select id="sYear"><option value="">Any year</option><option value="2020">2020 or later</option><option value="2010">2010 or later</option><option value="0">Before 2010</option></select>
+    </div>
+    <label class="check"><input type="checkbox" id="sSA" name="sa" value="1"> South African work only</label>
+    <div style="margin-top:10px"><button class="btn plain" type="button" id="sReset">Clear all filters</button></div>
+    </details>
+  </form>
+  <div>
+    <p class="count" id="searchCount" aria-live="polite" style="margin-top:0">Loading the search index…</p>
+    <div class="list" id="searchList"></div>
+  </div>
+</div>
+<script src="{{ '/assets/elasticlunr.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/search.js' | relative_url }}"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  if(window.matchMedia('(min-width:900px)').matches) $('moreFilters').open=true;
+  var p=new URLSearchParams(location.search);
+  if(p.get('q')) $('sQ').value=p.get('q');
+  if(p.get('sa')==='1'){ $('sSA').checked=true; $('moreFilters').open=true; }
+  if(p.get('shelf')) $('sShelf').value=p.get('shelf');
+  function run(){
+    TC.load(function(err){
+      if(err){ $('searchCount').textContent='The search index could not load. Refresh the page.'; return; }
+      var f={q:$('sQ').value, shelf:$('sShelf').value, area:$('sArea').value, year:$('sYear').value, sa:$('sSA').checked};
+      var res=TC.search(f), toks=TC.tokens(f.q);
+      $('searchCount').textContent=res.length+' of '+TC.store.length+' records match';
+      $('searchList').innerHTML=res.length ? res.map(function(d){return TC.card(d,toks);}).join('') : '<div class="empty">No records match. Try fewer words, check spelling, or press "Clear all filters".</div>';
+    });
+  }
+  $('sQ').addEventListener('input',run);
+  ['sShelf','sArea','sYear','sSA'].forEach(function(id){ $(id).addEventListener('change',run); });
+  $('searchForm').addEventListener('submit',function(e){ e.preventDefault(); run(); if(document.activeElement) document.activeElement.blur(); });
+  $('sReset').addEventListener('click',function(){ $('sQ').value=''; ['sShelf','sArea','sYear'].forEach(function(id){$(id).value='';}); $('sSA').checked=false; run(); });
+  run();
+})();
+</script>

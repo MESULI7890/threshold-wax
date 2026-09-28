@@ -1,0 +1,15 @@
+# Netlify builds the Wax (Jekyll) site from this repository.
+[build]
+  command = "bundle exec jekyll build"
+  publish = "_site"
+
+[build.environment]
+  RUBY_VERSION = "3.2.2"
+  LANG = "C.UTF-8"
+  LC_ALL = "C.UTF-8"
+  JEKYLL_ENV = "production"
+
+[[headers]]
+  for = "/downloads/*"
+  [headers.values]
+    Content-Disposition = "attachment"

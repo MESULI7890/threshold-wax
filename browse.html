@@ -1,0 +1,58 @@
+---
+layout: page
+title: Browse the shelves
+permalink: /browse/
+head_class: ph-browse
+lede: "Pick a collection, then narrow by subject area. The colour always means the same collection: blue Research, green Journal articles, purple Theses, teal Open textbooks."
+---
+{%- assign items = site.catalogue | sort: 'order' -%}
+{%- assign areas = items | map: 'area' | uniq | sort -%}
+<p class="rail-label" id="colLabel">Collection</p>
+<div class="rail" role="group" aria-labelledby="colLabel" id="railCol">
+  <button class="chip" type="button" data-shelf="" aria-pressed="true">All ({{ items.size }})</button>
+  {% for s in site.shelves %}{% assign n = items | where: 'shelf', s.key %}
+  <button class="chip" type="button" data-shelf="{{ s.key }}" aria-pressed="false">{{ s.label }} ({{ n.size }})</button>
+  {% endfor %}
+</div>
+<p class="rail-label" id="areaLabel">Subject area</p>
+<div class="rail" role="group" aria-labelledby="areaLabel" id="railArea">
+  <button class="chip" type="button" data-area="" aria-pressed="true">All areas</button>
+  {% for a in areas %}<button class="chip" type="button" data-area="{{ a }}" aria-pressed="false">{{ a }}</button>{% endfor %}
+</div>
+<label class="check"><input type="checkbox" id="browseSA"> South African work only</label>
+<p class="count" id="browseCount" aria-live="polite">{{ items.size }} items on this shelf</p>
+<div class="list" id="browseList">
+  {% for it in items %}{% include item_card.html item=it %}{% endfor %}
+</div>
+<div class="empty" id="browseEmpty" hidden>No items match these filters. Choose "All areas" or untick "South African work only".</div>
+
+<script>
+(function(){
+  var shelf='', area='';
+  var p=new URLSearchParams(location.search); if(p.get('shelf')) shelf=p.get('shelf');
+  var cards=[].slice.call(document.querySelectorAll('#browseList .card'));
+  var sa=document.getElementById('browseSA');
+  function apply(){
+    var n=0;
+    cards.forEach(function(c){
+      var ok=(!shelf||c.dataset.shelf===shelf)&&(!area||c.dataset.area===area)&&(!sa.checked||c.dataset.sa==='yes');
+      c.hidden=!ok; if(ok) n++;
+    });
+    document.querySelectorAll('#railCol .chip').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.shelf===shelf); });
+    document.querySelectorAll('#railArea .chip').forEach(function(b){
+      var a=b.dataset.area, avail=!a || cards.some(function(c){ return (!shelf||c.dataset.shelf===shelf) && c.dataset.area===a; });
+      b.disabled=!avail; b.setAttribute('aria-pressed', a===area);
+    });
+    document.getElementById('browseCount').textContent=n+' item'+(n===1?'':'s')+' on this shelf';
+    document.getElementById('browseEmpty').hidden=n>0;
+  }
+  document.querySelectorAll('#railCol .chip').forEach(function(b){ b.addEventListener('click',function(){
+    shelf=b.dataset.shelf; area='';
+    var u=new URL(location.href); if(shelf) u.searchParams.set('shelf',shelf); else u.searchParams.delete('shelf'); history.replaceState(null,'',u);
+    apply(); }); });
+  document.querySelectorAll('#railArea .chip').forEach(function(b){ b.addEventListener('click',function(){ area=b.dataset.area; apply(); }); });
+  sa.addEventListener('change', apply);
+  apply();
+  var on=document.querySelector('#railCol .chip[aria-pressed="true"]'); if(on && on.scrollIntoView && shelf) on.scrollIntoView({inline:'center', block:'nearest'});
+})();
+</script>

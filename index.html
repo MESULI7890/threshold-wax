@@ -1,0 +1,103 @@
+---
+layout: default
+title: Home
+---
+{%- assign items = site.catalogue | sort: 'order' -%}
+<div class="hero-band"><div class="wrap hero">
+  <div>
+    <p class="kicker">Academic digital library for DUT students and early-career researchers</p>
+    <h1>Open research you can read today, for a brighter mind and a better tomorrow.</h1>
+    <p class="lede">No paywalls. No logins. {{ items.size }} credible research reports, peer-reviewed journal articles, theses and dissertations, and open textbooks, free to read and download right now.</p>
+    <form id="homeForm" role="search" action="{{ '/search/' | relative_url }}" method="get" autocomplete="off">
+      <label class="search-label" for="homeQ">Search the collection</label>
+      <div class="searchbox">
+        <input id="homeQ" name="q" type="search" placeholder="Title, author, subject…" enterkeyhint="search">
+        <button type="submit">Search</button>
+      </div>
+      <label class="check"><input type="checkbox" id="homeSA" name="sa" value="1"> South African work only</label>
+      <div class="try">Try:
+        <button type="button" data-try="KwaZulu-Natal">KwaZulu-Natal</button>
+        <button type="button" data-try="entrepreneurship">entrepreneurship</button>
+        <button type="button" data-try="law">law</button>
+        <button type="button" data-try="textbook">textbook</button>
+      </div>
+    </form>
+    <div class="live" id="homeLive" hidden aria-live="polite"></div>
+  </div>
+  <div class="hero-photo">
+    <figure>
+      <img src="{{ '/assets/hero.jpg' | relative_url }}" alt="Library staircase with a subject name on each step: Science, Philosophy, Theology, Literature and more" width="640" height="853">
+      <figcaption>Every step is a subject. Start on any one.</figcaption>
+    </figure>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <section class="block" aria-labelledby="colsHead">
+    <div class="sec-head">
+      <h2 id="colsHead">The four collections</h2>
+      <p>Tap a title to see its full metadata, read it online or download it.</p>
+    </div>
+    <div class="cols">
+      {% for s in site.shelves %}
+        {% assign shelf_items = items | where: 'shelf', s.key %}
+        {% assign sa_items = shelf_items | where: 'sa', 'yes' %}
+        <div class="col shelf-{{ s.key }}">
+          <div class="col-top">
+            <h3><a href="{{ '/browse/' | relative_url }}?shelf={{ s.key }}">{{ s.label }}</a></h3>
+            <p>{{ s.blurb }} <b>{{ shelf_items.size }} items, {{ sa_items.size }} South African.</b></p>
+          </div>
+          <ol>
+            {% for it in shelf_items limit: 5 %}
+            <li><a href="{{ it.url | relative_url }}">{{ it.label }}</a>
+              {% assign cr = it.creator | split: '; ' %}
+              <span class="by">{% if cr.size > 1 and cr.first contains ',' %}{{ cr.first }} et al.{% else %}{{ cr | join: ' and ' }}{% endif %}, {{ it._date }}{% if it.sa == 'yes' %} <span class="badge sa">South Africa</span>{% endif %}</span></li>
+            {% endfor %}
+          </ol>
+          <a class="all" href="{{ '/browse/' | relative_url }}?shelf={{ s.key }}">{% if shelf_items.size > 5 %}See all {{ shelf_items.size }} {{ s.label | downcase }}{% else %}Browse {{ s.label | downcase }}{% endif %}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="svcHead">
+    <div class="sec-head">
+      <h2 id="svcHead">Library services most students miss</h2>
+      <p>Useful if you want to publish, not only read.</p>
+    </div>
+    <div class="services">
+      <div class="svc"><h3><a href="https://sanlic.ac.za/read-and-publish-agreements/" target="_blank" rel="noopener">Transformational agreements</a></h3><p>"Read and publish" deals negotiated through SANLiC that can cover open-access publishing fees for eligible DUT authors. Ask the library if your journal is included.</p></div>
+      <div class="svc"><h3><a href="https://library.dut.ac.za/" target="_blank" rel="noopener">Current Awareness Service</a></h3><p>Alerts about new arrivals and rare collections, so first-time users hear about material while it is still useful to them.</p></div>
+      <div class="svc"><h3><a href="https://openscholar.dut.ac.za/" target="_blank" rel="noopener">DUT Open Scholar</a></h3><p>DUT's own open repository of theses, dissertations and staff research. The Khumalo dissertation in this collection comes from here.</p></div>
+      <div class="svc"><h3><a href="https://library.dut.ac.za/" target="_blank" rel="noopener">DUT Library</a></h3><p>Workshops, book clubs, research training and subject librarians who can help you find and cite sources.</p></div>
+    </div>
+  </section>
+
+  <div class="verse">
+    <blockquote>“Wisdom is the principal thing; therefore get wisdom: and with all thy getting get understanding.”</blockquote>
+    <cite>Proverbs 4:7 (KJV)</cite>
+  </div>
+</div>
+
+<script src="{{ '/assets/elasticlunr.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/search.js' | relative_url }}"></script>
+<script>
+(function(){
+  var q=document.getElementById('homeQ'), sa=document.getElementById('homeSA'), box=document.getElementById('homeLive');
+  function render(){
+    var v=q.value.trim();
+    if(!v && !sa.checked){ box.hidden=true; box.innerHTML=''; return; }
+    TC.load(function(err){
+      if(err){ box.hidden=false; box.innerHTML='<div class="row">Search is loading. Press Search to try again.</div>'; return; }
+      var res=TC.search({q:v, sa:sa.checked}), toks=TC.tokens(v);
+      var p=new URLSearchParams(); if(v) p.set('q',v); if(sa.checked) p.set('sa','1');
+      var link='{{ "/search/" | relative_url }}?'+p.toString();
+      box.hidden=false;
+      box.innerHTML='<div class="live-head"><span><b>'+res.length+'</b> result'+(res.length===1?'':'s')+(v?' for “'+TC.esc(v)+'”':'')+'</span>'+(res.length?'<a href="'+link+'">See all with downloads</a>':'')+'</div>'+
+        (res.length ? res.slice(0,4).map(function(d){return TC.row(d,toks);}).join('') : '<div class="row">Nothing matches. Check the spelling, use fewer words, or <a href="{{ "/browse/" | relative_url }}">browse the collections</a>.</div>');
+    });
+  }
+  q.addEventListener('input', render); sa.addEventListener('change', render);
+  document.querySelectorAll('[data-try]').forEach(function(b){ b.addEventListener('click', function(){ q.value=b.getAttribute('data-try'); render(); }); });
+})();
+</script>
