@@ -1,6 +1,6 @@
-# The Threshold Collection — built with Wax
+# Digital Nexus — built with Wax
 
-Academic digital library for DUT students and early-career researchers (ICTB301, Department of Information Systems, Durban University of Technology).
+Open-access academic digital library for university students and early-career researchers (ICTB301 project).
 
 **Software:** [Wax](https://minicomp.github.io/wiki/wax/) (open-source, minicomp) on the Jekyll static-site generator. Hosted from GitHub on Netlify.
 

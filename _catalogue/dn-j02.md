@@ -1,5 +1,5 @@
 ---
-pid: tc-j02
+pid: dn-j02
 order: '07'
 label: Hybrid Transformer-Based Large Language Models for Word Sense Disambiguation
   in the Low-Resource Sesotho sa Leboa Language

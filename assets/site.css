@@ -1,5 +1,5 @@
-/* The Threshold Collection — Wax theme customisation
-   Colours come from the DUT logo, darkened to pass WCAG AA on white.
+/* Digital Nexus — Wax theme customisation
+   Five-colour palette, darkened to pass WCAG AA on white.
    Mobile first: base styles are for phones, wider screens add columns. */
 :root{
   --bg:#FFFFFF; --panel:#F2F5F9; --ink:#14213D; --ink-soft:#44506A; --line:#CFD7E3;

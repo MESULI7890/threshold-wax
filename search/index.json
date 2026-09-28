@@ -3,7 +3,7 @@ layout: none
 ---
 [
   {
-    "pid": "tc-b01",
+    "pid": "dn-b01",
     "order": "21",
     "label": "Inequality and Interdependence: Social Problems and Social Justice",
     "shelf": "book",
@@ -24,11 +24,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b01",
+    "permalink": "/catalogue/dn-b01",
     "lunr_id": 0
   },
   {
-    "pid": "tc-b02",
+    "pid": "dn-b02",
     "order": "22",
     "label": "First Amendment: Cases, Controversies, and Contexts (2nd ed.)",
     "shelf": "book",
@@ -49,11 +49,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY-NC-SA 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b02",
+    "permalink": "/catalogue/dn-b02",
     "lunr_id": 1
   },
   {
-    "pid": "tc-b03",
+    "pid": "dn-b03",
     "order": "23",
     "label": "Earth, Space, and Environmental Science Explorations with ArcGIS Pro (2nd ed.)",
     "shelf": "book",
@@ -74,11 +74,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b03",
+    "permalink": "/catalogue/dn-b03",
     "lunr_id": 2
   },
   {
-    "pid": "tc-b04",
+    "pid": "dn-b04",
     "order": "24",
     "label": "Biology 2e",
     "shelf": "book",
@@ -99,11 +99,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY-NC-SA 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b04",
+    "permalink": "/catalogue/dn-b04",
     "lunr_id": 3
   },
   {
-    "pid": "tc-b05",
+    "pid": "dn-b05",
     "order": "25",
     "label": "Psychology 2e",
     "shelf": "book",
@@ -124,11 +124,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY-NC-SA 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b05",
+    "permalink": "/catalogue/dn-b05",
     "lunr_id": 4
   },
   {
-    "pid": "tc-b06",
+    "pid": "dn-b06",
     "order": "26",
     "label": "Introduction to Sociology 3e",
     "shelf": "book",
@@ -149,11 +149,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY-NC-SA 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b06",
+    "permalink": "/catalogue/dn-b06",
     "lunr_id": 5
   },
   {
-    "pid": "tc-b07",
+    "pid": "dn-b07",
     "order": "27",
     "label": "Entrepreneurship",
     "shelf": "book",
@@ -174,11 +174,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY-NC-SA 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b07",
+    "permalink": "/catalogue/dn-b07",
     "lunr_id": 6
   },
   {
-    "pid": "tc-b08",
+    "pid": "dn-b08",
     "order": "28",
     "label": "Introduction to Industrial Engineering",
     "shelf": "book",
@@ -199,11 +199,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b08",
+    "permalink": "/catalogue/dn-b08",
     "lunr_id": 7
   },
   {
-    "pid": "tc-b09",
+    "pid": "dn-b09",
     "order": "29",
     "label": "Engineering Statics: Open and Interactive",
     "shelf": "book",
@@ -224,11 +224,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY-NC-SA 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b09",
+    "permalink": "/catalogue/dn-b09",
     "lunr_id": 8
   },
   {
-    "pid": "tc-b10",
+    "pid": "dn-b10",
     "order": "30",
     "label": "Teaching in a Digital Age: Guidelines for Designing Teaching and Learning (3rd ed.)",
     "shelf": "book",
@@ -248,11 +248,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY-NC 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b10",
+    "permalink": "/catalogue/dn-b10",
     "lunr_id": 9
   },
   {
-    "pid": "tc-b11",
+    "pid": "dn-b11",
     "order": "31",
     "label": "Artificial Intelligence: Foundations of Computational Agents (3rd ed.)",
     "shelf": "book",
@@ -270,11 +270,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY-NC-ND 4.0 (online edition)",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b11",
+    "permalink": "/catalogue/dn-b11",
     "lunr_id": 10
   },
   {
-    "pid": "tc-b12",
+    "pid": "dn-b12",
     "order": "19",
     "label": "The symbiosis between information system project complexity and information system project success",
     "shelf": "book",
@@ -295,11 +295,11 @@ layout: none
     "coverage": "South Africa",
     "rights": "CC BY-NC-SA 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b12",
+    "permalink": "/catalogue/dn-b12",
     "lunr_id": 11
   },
   {
-    "pid": "tc-b13",
+    "pid": "dn-b13",
     "order": "20",
     "label": "Justice-based ethics: Challenging South African perspectives",
     "shelf": "book",
@@ -321,11 +321,11 @@ layout: none
     "coverage": "South Africa",
     "rights": "CC BY-NC-SA 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-b13",
+    "permalink": "/catalogue/dn-b13",
     "lunr_id": 12
   },
   {
-    "pid": "tc-j01",
+    "pid": "dn-j01",
     "order": "06",
     "label": "Digital twinning in conceptualising metaversity academic library information hubs",
     "shelf": "journal",
@@ -346,11 +346,11 @@ layout: none
     "coverage": "South Africa",
     "rights": "CC BY-SA 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-j01",
+    "permalink": "/catalogue/dn-j01",
     "lunr_id": 13
   },
   {
-    "pid": "tc-j02",
+    "pid": "dn-j02",
     "order": "07",
     "label": "Hybrid Transformer-Based Large Language Models for Word Sense Disambiguation in the Low-Resource Sesotho sa Leboa Language",
     "shelf": "journal",
@@ -370,11 +370,11 @@ layout: none
     "coverage": "South Africa",
     "rights": "CC BY 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-j02",
+    "permalink": "/catalogue/dn-j02",
     "lunr_id": 14
   },
   {
-    "pid": "tc-j03",
+    "pid": "dn-j03",
     "order": "08",
     "label": "Community-orientated primary health care: Exploring the interface between community health worker programmes, the health system and communities in South Africa",
     "shelf": "journal",
@@ -395,11 +395,11 @@ layout: none
     "coverage": "South Africa",
     "rights": "CC BY 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-j03",
+    "permalink": "/catalogue/dn-j03",
     "lunr_id": 15
   },
   {
-    "pid": "tc-j04",
+    "pid": "dn-j04",
     "order": "09",
     "label": "Contextual factors influencing entrepreneurship education at a South African University of Technology",
     "shelf": "journal",
@@ -408,7 +408,7 @@ layout: none
     "area": "Business & Management",
     "creator": "Price, K.; Ronnie, L.",
     "subject": "Entrepreneurship education; university of technology; strategy; start-ups; organisational behaviour; South Africa",
-    "description": "Looks at what helps and what holds back entrepreneurship teaching at a South African university of technology, the same type of university as DUT.",
+    "description": "Looks at what helps and what holds back entrepreneurship teaching at a South African university of technology.",
     "publisher": "The Southern African Journal of Entrepreneurship and Small Business Management, 13(1), a394",
     "_date": "2021",
     "type": "Journal article (peer reviewed)",
@@ -420,11 +420,11 @@ layout: none
     "coverage": "South Africa",
     "rights": "CC BY 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-j04",
+    "permalink": "/catalogue/dn-j04",
     "lunr_id": 16
   },
   {
-    "pid": "tc-j05",
+    "pid": "dn-j05",
     "order": "10",
     "label": "Prioritising Command-and-Control Over Collaborative Governance: The Role of the Information Regulator Under the Protection of Personal Information Act",
     "shelf": "journal",
@@ -445,11 +445,11 @@ layout: none
     "coverage": "South Africa",
     "rights": "CC BY 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-j05",
+    "permalink": "/catalogue/dn-j05",
     "lunr_id": 17
   },
   {
-    "pid": "tc-j06",
+    "pid": "dn-j06",
     "order": "11",
     "label": "Interactive pedagogy elevating learners as producers of knowledge in the isiZulu classroom",
     "shelf": "journal",
@@ -470,11 +470,11 @@ layout: none
     "coverage": "South Africa",
     "rights": "Open access",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-j06",
+    "permalink": "/catalogue/dn-j06",
     "lunr_id": 18
   },
   {
-    "pid": "tc-j07",
+    "pid": "dn-j07",
     "order": "12",
     "label": "The state of OA: a large-scale analysis of the prevalence and impact of Open Access articles",
     "shelf": "journal",
@@ -494,11 +494,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-j07",
+    "permalink": "/catalogue/dn-j07",
     "lunr_id": 19
   },
   {
-    "pid": "tc-j08",
+    "pid": "dn-j08",
     "order": "13",
     "label": "Seasonality regulates the taxonomic and functional compositions of protists responding to climate warming in forest ecosystems",
     "shelf": "journal",
@@ -518,11 +518,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-j08",
+    "permalink": "/catalogue/dn-j08",
     "lunr_id": 20
   },
   {
-    "pid": "tc-r01",
+    "pid": "dn-r01",
     "order": "01",
     "label": "Twelve Years Later: Second ASSAf Report on Research Publishing in and from South Africa",
     "shelf": "research",
@@ -543,11 +543,11 @@ layout: none
     "coverage": "South Africa",
     "rights": "Open access (ASSAf Research Repository)",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-r01",
+    "permalink": "/catalogue/dn-r01",
     "lunr_id": 21
   },
   {
-    "pid": "tc-r02",
+    "pid": "dn-r02",
     "order": "02",
     "label": "Report of the Presidential Commission on the Fourth Industrial Revolution",
     "shelf": "research",
@@ -568,11 +568,11 @@ layout: none
     "coverage": "South Africa",
     "rights": "Public government document",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-r02",
+    "permalink": "/catalogue/dn-r02",
     "lunr_id": 22
   },
   {
-    "pid": "tc-r03",
+    "pid": "dn-r03",
     "order": "03",
     "label": "Engineering for Sustainable Development: Delivering on the Sustainable Development Goals",
     "shelf": "research",
@@ -593,11 +593,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY-SA 3.0 IGO",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-r03",
+    "permalink": "/catalogue/dn-r03",
     "lunr_id": 23
   },
   {
-    "pid": "tc-r04",
+    "pid": "dn-r04",
     "order": "04",
     "label": "The Climate-Smart Agriculture Papers: Investigating the Business of a Productive, Resilient and Low Emission Future",
     "shelf": "research",
@@ -619,11 +619,11 @@ layout: none
     "coverage": "International",
     "rights": "CC BY 4.0",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-r04",
+    "permalink": "/catalogue/dn-r04",
     "lunr_id": 24
   },
   {
-    "pid": "tc-r05",
+    "pid": "dn-r05",
     "order": "05",
     "label": "The 2025 AI Index Report",
     "shelf": "research",
@@ -644,37 +644,37 @@ layout: none
     "coverage": "International",
     "rights": "Free to read (licence on publisher site)",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-r05",
+    "permalink": "/catalogue/dn-r05",
     "lunr_id": 25
   },
   {
-    "pid": "tc-t01",
+    "pid": "dn-t01",
     "order": "14",
-    "label": "Digital literacy instruction in academic libraries in KwaZulu-Natal",
+    "label": "Second-year Social Science students' perceptions of electronic information resources at the University of KwaZulu-Natal",
     "shelf": "thesis",
     "shelf_label": "Theses & dissertations",
     "sa": "yes",
     "area": "Library & Information Science",
-    "creator": "Khumalo, A.",
-    "contributor": "Supervisors: Rajkoomar, M.; Rajagopaul, A.",
-    "subject": "Digital literacy; subject librarians; digital skills; academic libraries; KwaZulu-Natal",
-    "description": "DUT study of how subject librarians in KwaZulu-Natal use technology to teach digital literacy, and which digital skills they still need.",
-    "publisher": "Durban University of Technology",
-    "_date": "2022",
+    "creator": "Jalubane, J. B.",
+    "contributor": "Supervisor: Kheswa, S. E.",
+    "subject": "Electronic information resources; e-resources; library users; information literacy; social science students; KwaZulu-Natal",
+    "description": "Study of how second-year Social Science students see and use the library's electronic resources (e-books, e-journals and databases), and what stops them using them more.",
+    "publisher": "University of KwaZulu-Natal, Pietermaritzburg",
+    "_date": "2024",
     "type": "Master's dissertation",
-    "source": "https://doi.org/10.51415/10321/4666",
-    "download": "https://openscholar.dut.ac.za/server/api/core/bitstreams/eaf5c58e-32bc-4a33-9f96-b37d9c764194/content",
+    "source": "https://doi.org/10.29086/10413/23099",
+    "download": "https://researchspace.ukzn.ac.za/server/api/core/bitstreams/d09a2aad-8607-4515-8a0c-60eda300a091/content",
     "download_type": "PDF",
-    "download_size": "3.2 MB",
+    "download_size": "1.3 MB",
     "stored_here": "no",
     "coverage": "South Africa",
-    "rights": "Open access (DUT Open Scholar)",
+    "rights": "Open access (UKZN ResearchSpace)",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-t01",
+    "permalink": "/catalogue/dn-t01",
     "lunr_id": 26
   },
   {
-    "pid": "tc-t02",
+    "pid": "dn-t02",
     "order": "15",
     "label": "The role of school libraries in teaching and learning in the Umhlali Circuit, ILembe District, KwaZulu-Natal: a case study of Dinuphozo Primary School library",
     "shelf": "thesis",
@@ -696,11 +696,11 @@ layout: none
     "coverage": "South Africa",
     "rights": "Open access (UKZN ResearchSpace)",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-t02",
+    "permalink": "/catalogue/dn-t02",
     "lunr_id": 27
   },
   {
-    "pid": "tc-t03",
+    "pid": "dn-t03",
     "order": "16",
     "label": "A symbolic analysis of relay and switching circuits",
     "shelf": "thesis",
@@ -721,11 +721,11 @@ layout: none
     "coverage": "International",
     "rights": "Open access (MIT DSpace)",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-t03",
+    "permalink": "/catalogue/dn-t03",
     "lunr_id": 28
   },
   {
-    "pid": "tc-t04",
+    "pid": "dn-t04",
     "order": "17",
     "label": "Training recurrent neural networks",
     "shelf": "thesis",
@@ -746,11 +746,11 @@ layout: none
     "coverage": "International",
     "rights": "Free to read (author's copy)",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-t04",
+    "permalink": "/catalogue/dn-t04",
     "lunr_id": 29
   },
   {
-    "pid": "tc-t05",
+    "pid": "dn-t05",
     "order": "18",
     "label": "Connecting images and natural language",
     "shelf": "thesis",
@@ -771,7 +771,7 @@ layout: none
     "coverage": "International",
     "rights": "Free to read (author's copy)",
     "collection": "catalogue",
-    "permalink": "/catalogue/tc-t05",
+    "permalink": "/catalogue/dn-t05",
     "lunr_id": 30
   }
 ]

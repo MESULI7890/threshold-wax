@@ -1,5 +1,5 @@
 ---
-pid: tc-t03
+pid: dn-t03
 order: '16'
 label: A symbolic analysis of relay and switching circuits
 shelf: thesis

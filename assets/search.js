@@ -1,6 +1,6 @@
 ---
 ---
-/* Search for The Threshold Collection.
+/* Search for Digital Nexus.
    Uses the Wax search index (search/index.json, built by `rake wax:search main`)
    and elasticlunr, the search library that ships with Wax. */
 (function(){

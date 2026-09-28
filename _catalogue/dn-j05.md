@@ -1,5 +1,5 @@
 ---
-pid: tc-j05
+pid: dn-j05
 order: '10'
 label: 'Prioritising Command-and-Control Over Collaborative Governance: The Role of
   the Information Regulator Under the Protection of Personal Information Act'

@@ -1,5 +1,5 @@
 ---
-pid: tc-b01
+pid: dn-b01
 order: '21'
 label: 'Inequality and Interdependence: Social Problems and Social Justice'
 shelf: book

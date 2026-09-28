@@ -1,5 +1,5 @@
 ---
-pid: tc-t04
+pid: dn-t04
 order: '17'
 label: Training recurrent neural networks
 shelf: thesis

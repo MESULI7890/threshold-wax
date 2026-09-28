@@ -1,5 +1,5 @@
 ---
-pid: tc-j06
+pid: dn-j06
 order: '11'
 label: Interactive pedagogy elevating learners as producers of knowledge in the isiZulu
   classroom

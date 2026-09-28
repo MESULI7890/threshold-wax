@@ -1,5 +1,5 @@
 ---
-pid: tc-b05
+pid: dn-b05
 order: '25'
 label: Psychology 2e
 shelf: book

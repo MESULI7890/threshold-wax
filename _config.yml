@@ -1,5 +1,5 @@
 # ==============================================================
-# THE THRESHOLD COLLECTION — built with Wax (minicomp/wax)
+# DIGITAL NEXUS — built with Wax (minicomp/wax)
 # ==============================================================
 # Wax is open-source digital library / exhibition software built on Jekyll.
 # Item pages and the search index are generated from the Dublin Core
@@ -8,11 +8,11 @@
 #   bundle exec rake wax:search main
 # ==============================================================
 
-title:        'The Threshold Collection'
-description:  'Academic digital library for DUT students and early-career researchers. Open research you can read today for a brighter mind and better tomorrow.'
+title:        'Digital Nexus'
+description:  'Open-access academic digital library for university students and early-career researchers. Open research you can read today for a brighter mind and better tomorrow.'
 url:          'https://reliable-belekoy-2a2d21.netlify.app'
 baseurl:      ''
-copyright:    'The Threshold Collection project group, ICTB301, Durban University of Technology, 2026'
+copyright:    'Digital Nexus project group, ICTB301, 2026'
 
 permalink: pretty
 exclude: ["Gemfile*", "Rakefile", "vendor", "README.md", "netlify.toml", "WAX_LICENSE.txt", "node_modules"]
@@ -70,7 +70,7 @@ shelves:
     blurb: 'Peer-reviewed articles from open-access journals.'
   - key: thesis
     label: 'Theses & dissertations'
-    blurb: "Master's and doctoral work from DUT, UKZN and leading universities."
+    blurb: "Master's and doctoral work from South African and leading international universities."
   - key: book
     label: 'Open textbooks & e-books'
     blurb: 'Free textbooks and e-books from AOSIS, OpenStax, Open Oregon, CALI and the Open Textbook Library.'

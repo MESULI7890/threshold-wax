@@ -1,5 +1,5 @@
 ---
-pid: tc-j04
+pid: dn-j04
 order: '09'
 label: Contextual factors influencing entrepreneurship education at a South African
   University of Technology
@@ -11,7 +11,7 @@ creator: Price, K.; Ronnie, L.
 subject: Entrepreneurship education; university of technology; strategy; start-ups;
   organisational behaviour; South Africa
 description: Looks at what helps and what holds back entrepreneurship teaching at
-  a South African university of technology, the same type of university as DUT.
+  a South African university of technology.
 publisher: The Southern African Journal of Entrepreneurship and Small Business Management,
   13(1), a394
 _date: '2021'

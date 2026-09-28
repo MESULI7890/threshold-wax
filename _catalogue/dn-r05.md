@@ -1,5 +1,5 @@
 ---
-pid: tc-r05
+pid: dn-r05
 order: '05'
 label: The 2025 AI Index Report
 shelf: research

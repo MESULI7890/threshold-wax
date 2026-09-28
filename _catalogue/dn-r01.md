@@ -1,5 +1,5 @@
 ---
-pid: tc-r01
+pid: dn-r01
 order: '01'
 label: 'Twelve Years Later: Second ASSAf Report on Research Publishing in and from
   South Africa'

@@ -1,5 +1,5 @@
 ---
-pid: tc-b06
+pid: dn-b06
 order: '26'
 label: Introduction to Sociology 3e
 shelf: book

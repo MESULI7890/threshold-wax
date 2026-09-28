@@ -1,5 +1,5 @@
 ---
-pid: tc-b10
+pid: dn-b10
 order: '30'
 label: 'Teaching in a Digital Age: Guidelines for Designing Teaching and Learning
   (3rd ed.)'

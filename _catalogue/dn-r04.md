@@ -1,5 +1,5 @@
 ---
-pid: tc-r04
+pid: dn-r04
 order: '04'
 label: 'The Climate-Smart Agriculture Papers: Investigating the Business of a Productive,
   Resilient and Low Emission Future'

@@ -1,5 +1,5 @@
 ---
-pid: tc-b11
+pid: dn-b11
 order: '31'
 label: 'Artificial Intelligence: Foundations of Computational Agents (3rd ed.)'
 shelf: book

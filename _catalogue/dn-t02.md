@@ -1,5 +1,5 @@
 ---
-pid: tc-t02
+pid: dn-t02
 order: '15'
 label: 'The role of school libraries in teaching and learning in the Umhlali Circuit,
   ILembe District, KwaZulu-Natal: a case study of Dinuphozo Primary School library'
